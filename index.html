@@ -57,15 +57,14 @@
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.enableZoom = true; // Enable zoom
+    controls.enableZoom = true;
     controls.enablePan = false;
 
-    // Add mobile device detection and scaling
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        camera.position.set(4, 0, 10); // Moved camera right (x: 2) and further out (z: 8)
+        camera.position.set(2, 0, 6);
     } else {
-        camera.position.set(0, 0, 5); // Desktop camera position
+        camera.position.set(0, 0, 5);
     }
 
     let stein;
