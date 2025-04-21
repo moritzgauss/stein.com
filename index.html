@@ -80,7 +80,7 @@
       updateText();
     });
 
-    function updateText() {
+       function updateText() {
       if (!font) return;
 
       if (textMesh) scene.remove(textMesh);
@@ -90,13 +90,13 @@
         font: font,
         size: 0.25,
         height: 0.05,
-        curveSegments: 8,
+        curveSegments: 6,
         bevelEnabled: false
       });
 
       const material = new THREE.MeshStandardMaterial({ color: 0x111111 });
       textMesh = new THREE.Mesh(geometry, material);
-      textMesh.position.set(stein?.position.x + 0.5 || 1, stein?.position.y + 0.5 || 0.5, 0);
+      textMesh.position.set(stein?.position.x + 0.5 || 0.5, stein?.position.y + 0.5 || 0.5, 0);
       scene.add(textMesh);
     }
 
@@ -127,7 +127,7 @@
         }
 
         if (textMesh) {
-          textMesh.position.set(stein.position.x + 1, stein.position.y + 0.5, stein.position.z);
+          textMesh.position.set(stein.position.x + 0.5, stein.position.y + 0.5, stein.position.z);
         }
       }
 
