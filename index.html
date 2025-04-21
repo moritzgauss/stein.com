@@ -62,7 +62,7 @@
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        camera.position.set(2, 0, 6);
+        camera.position.set(4, 0, 6);
     } else {
         camera.position.set(0, 0, 5);
     }
@@ -90,13 +90,13 @@
         font: font,
         size: 0.25,
         height: 0.05,
-        curveSegments: 6,
+        curveSegments: 8,
         bevelEnabled: false
       });
 
       const material = new THREE.MeshStandardMaterial({ color: 0x111111 });
       textMesh = new THREE.Mesh(geometry, material);
-      textMesh.position.set(stein?.position.x + 1 || 1, stein?.position.y + 0.5 || 0.5, 0);
+      textMesh.position.set(stein?.position.x + 0.5 || 1, stein?.position.y + 0.5 || 0.5, 0);
       scene.add(textMesh);
     }
 
@@ -105,7 +105,7 @@
     const loader = new GLTFLoader();
     loader.load('stein.glb', (gltf) => {
       stein = gltf.scene;
-      stein.scale.set(20, 20, 20); // 5x skalieren
+      stein.scale.set(20, 20, 20);
       scene.add(stein);
     });
 
